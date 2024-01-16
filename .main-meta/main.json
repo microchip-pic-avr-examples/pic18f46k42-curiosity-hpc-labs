@@ -2,29 +2,29 @@
     "metaDataVersion": "1.0.0",
     "category": "com.microchip.ide.project",
     "content": {
-        "metaDataVersion": "1.1.0",
-        "name": "com.microchip.mcu8.mplabx.project.",
-        "version": " ",
-        "displayName": "  ",
-        "projectName": "",
-        "shortDescription": "",
+        "metaDataVersion": "1.3.0",
+        "name": "com.microchip.mcu8.mplabx.project.pic18f46k42-curiosity-hpc-labs.",
+        "version": "2.0.0",
+        "displayName": "Example for Curiosity HPC development board with PIC18F46K42",
+        "projectName": "pic18f46k42-curiosity-hpc-labs",
+        "shortDescription": "Ten labs to showcase the PIC18F46K42",
         "ide": {
-            "name": "",
-            "semverRange": ""
+            "name": "MPLAB X",
+            "semverRange": ">=6.15.0"
         },
         "compiler": [
 			{
-				"name": "",
-				"semverRange": ""
+				"name": "XC8",
+				"semverRange": "^2.45.0"
 			}
 		],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC15f-K_DFP",
+            "semverRange": "1.13.292"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=5.5.7"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -32,27 +32,13 @@
             "content": {
                 "metaDataVersion": "1.0.0",
                 "category": "com.microchip.device",
-                "name": "",
+                "name": "PIC18F46K42",
                 "versionRange": "*"
             }
         },
-        "author": "",
-        "subcategories": [
-            "",
-            [
-               "Peripherals", ""
-            ],
-            [
-               "Peripherals", ""
-            ]            			
-        ],
-        "peripherals": [
-            "",""
-        ],
-        "keywords": [
-            "",
-            ""			
-        ],
+        "author": "Jamus Griego",
+        "peripherals": ["ADCC","UART","WWDT","TMR1","PWM"],
+        "keywords": ["Getting Started", "Melody", "Curiosity"],
 		"additionalData": {
 			"longDescription": {
 				"metaDataVersion": "1.0.0",
