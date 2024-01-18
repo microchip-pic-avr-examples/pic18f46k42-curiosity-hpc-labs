@@ -142,6 +142,7 @@ Pulse-Width Modulation (PWM) is a scheme that provides power to a load by switch
 <img src= "https://i.imgur.com/m3owUho.png">
 
 ![Timer2](images/tmr2.png)
+
 ![PWM6](images/pwm6.png)
 
 ### <u>Lab 7: Timers</u>
@@ -154,7 +155,8 @@ Timer1 is a counter module that uses two 8-bit paired registers (TMR1H:TMR1L) to
 This lab configures Timer1 to count instruction cycles and to set a flag when it rolls over. This frees up the processor to do meaningful work rather than wasting instruction cycles in a timing loop. Using a counter provides a convenient method of measuring time or delay loops as it allows the processor to work on other tasks rather than counting instruction cycles.
 ###### Program Flow: Timer Lab
 <img src= "https://i.imgur.com/H3HGzxq.jpg">
-<br><img src= "images/tmr1.png">
+
+![Timer1](images/tmr1.png)
 
 ### <u>Lab 8: Interrupts</u>
 #### Introduction
@@ -165,7 +167,8 @@ LEDs D5, D4, D3 and D2 rotate from left to right at a constant rate of 499.712 m
 This lab demonstrates the advantage of using interrupts over polling. An interrupt is generated whenever the TMR0 register reaches 0xFF and goes back to reset value. This indicates that 500 ms have passed and it is time to rotate the light. This interrupt is serviced by the ```TMR0_ISR()``` function. **Note** that this is the same for Lab 7: Timer1, but this time, we are not continuously watching the TMR1IF flag.
 ###### Program Flow: Interrupt Lab
 <img src= "https://i.imgur.com/uUNaVvt.jpg">
-<br><img src= "images/tmr0.png">
+
+![Timer0](images/tmr0.png)
 
 ### <u>Lab 9: Wake-up from Sleep: Using Watchdog Timer</u>
 #### Introduction
