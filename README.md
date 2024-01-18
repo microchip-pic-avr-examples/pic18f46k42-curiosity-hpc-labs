@@ -140,8 +140,9 @@ Rotating potentiometer will adjust the brightness of LED D5. <br />
 Pulse-Width Modulation (PWM) is a scheme that provides power to a load by switching quickly between fully ON and fully OFF states. The PWM signal resembles a square wave where the high portion of the signal is considered the ON state and the low portion of the signal is considered the OFF state. The high portion, also known as the pulse width, can vary in time and is defined in steps. A longer, high ON time will illuminate the LED brighter. The frequency or period of the PWM does not change. The PWM period is defined as the duration of one cycle or the total amount of ON and OFF time combined. Another important term to take note is the PWM duty cycle which is the ratio of the pulse width to the period and is often expressed in percentage. A lower duty cycle corresponds to less power applied and a higher duty cycle corresponds to more power applied.
 ###### Program Flow: Pulse-Width Modulation Lab
 <img src= "https://i.imgur.com/m3owUho.png">
-<br><img src= "images/tmr2.png">
-<br><img src= "images/pwm6.png">
+
+![Timer2](images/tmr2.png)
+![PWM6](images/pwm6.png)
 
 ### <u>Lab 7: Timers</u>
 #### Introduction
