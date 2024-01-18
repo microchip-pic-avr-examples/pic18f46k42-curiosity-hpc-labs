@@ -14,11 +14,11 @@ This example also makes use of the latest MPLAB® Code Configurator (MCC) Melody
 
 ## Software Used
  
-- [MPLAB X IDE](http://www.microchip.com/mplab/mplab-x-ide) v6.15 or newer
-- [MPLAB XC8](http://www.microchip.com/mplab/compilers) v2.45 or newer
-- [PIC18F-K_DFP Series Device Pack](https://packs.download.microchip.com) v1.13.292 or newer
-- [MPLAB Code Configurator](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator) v5.5.7 or newer
-- [MPLAB Code Configurator Melody](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator/melody) core v2.6.2 or newer
+- [MPLAB X IDE v6.15 or newer](http://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB XC8 v2.45 or newer](http://www.microchip.com/mplab/compilers)
+- [PIC18F-K_DFP Series Device Pack v1.13.292 or newer](https://packs.download.microchip.com)
+- [MPLAB Code Configurator v5.5.7 or newer](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator)
+- [MPLAB Code Configurator Melody core v2.6.2 or newer](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator/melody)
 
 ## Hardware Used
 - [Curiosity HPC Development board](https://www.microchip.com/en-us/development-tool/DM164136) 
@@ -67,7 +67,7 @@ This lab shows how to turn on an LED.
 LED D2 lights up and stays lit.
 
 #### Summary
-The LEDs are connected to the input-output (I/O) pins. First, the I/O pin must be configured to be an output. In this case, when one of these pins is driven high (LED_D2 = 1), the LED will turn on. These two logic levels are derived from the power pins of the PIC MCU. Since the PIC's power pin (V<sub>DD</sub>) is connected to 5V or 3.3V and the source (V<sub>SS</sub>) to ground (0V), a logic level of ```'1'``` is equivalent to 5V or 3.3V, and a logic level of ```'0'``` is 0V.
+The LEDs are connected to the input/output (I/O) pins. First, the I/O pin must be configured to be an output. In this case, when one of these pins is driven high (LED_D2 = 1), the LED will turn on. These two logic levels are derived from the power pins of the PIC MCU. Since the PIC's power pin (V<sub>DD</sub>) is connected to 5V or 3.3V and the source (V<sub>SS</sub>) to ground (0V), a logic level of ```'1'``` is equivalent to 5V or 3.3V, and a logic level of ```'0'``` is 0V.
 
 ### <u>Lab 2: Blink</u>
 #### Introduction
@@ -77,7 +77,7 @@ This lab shows how to blink an LED.
 LED D2 blinks at a rate of approximately 1.5 seconds.
 
 #### Summary
-One way to create a delay is to spend time decrementing a value. In assembly, the timing can be accurately programmed since the user will have direct control on how the code is executed. In C, the compiler takes the C and compiles it into assembly before creating the file to program to the actual PIC MCU (HEX file). Because of this, it is hard to predict exactly how many instructions it takes for a line of C to execute. For a more accurate timing in C, this lab uses the MCU's Timer1 module to produce the desired delay. Timer1 is discussed in Lab 7: Timers.
+One way to create a delay is to spend time decrementing a value. In assembly, the timing can be accurately programmed since the user will have direct control on how the code is executed. In C language programming, the compiler takes the C and compiles it into assembly before creating the file to program to the actual PIC MCU (HEX file). Because of this, it is hard to predict exactly how many instructions it takes for a line of C to execute. For a more accurate timing in C, this lab uses the MCU's Timer1 (TMR1) module to produce the desired delay. TMR1 is discussed in Lab 7: Timers.
 
 <br><img src= "https://i.imgur.com/hK95BJI.jpg">
 
@@ -108,7 +108,7 @@ Similarly, if we want to push a ```'1'``` into the MSB of the register and have 
 This lab shows how to configure the ADC, run a conversion, read the analog voltage controlled by the on-board Potentiometer, display the high order four bits on the LEDs.
 
 #### Hardware Effects
-The four most significant bits of the ADC result are reflected onto each of the four LEDs respectively. Rotate the Potentiometer to change the display. <br />
+The four most significant bits of the ADC result are reflected onto each of the four LEDs respectively. Rotate the Potentiometer to change the LEDs. <br />
 
 #### Summary
 The PIC18-K42 family of devices have an on-board Analog-to-Digital Converter with Computation (ADCC) with 12 bits of resolution. The converter can be referenced to the device's V<sub>DD</sub> or an external voltage reference. In this lab, it is referenced to V<sub>DD</sub>. The result from the ADC is represented by a ratio of the voltage to the reference.
@@ -124,7 +124,7 @@ This lab combines all of the previous ones to produce a variable speed rotating 
 Rotate the on-board potentiometer to change the speed of the LED shift. <br />
 
 #### Summary
-A crucial step in this lab is to check if the ADC value is 0. If it does not perform the zero check, and if the ADC result is zero, the LEDs will rotate at an incorrect speed. This is an effect of the delay value underflowing from 0 to 255.
+A crucial step in this lab is to check if the ADC value is zero. If it does not perform the zero check, and if the ADC result is zero, the LEDs will rotate at an incorrect speed. This is an effect of the delay value underflowing from 0 to 255.
 
 ###### Program Flow: Variable Speed Rotate Lab
 ![Lab 5 Program Flow](images/Lab5-program-flow.PNG)
@@ -165,7 +165,7 @@ This lab discusses interrupts;  the operation, capabilities and how to set them 
 #### Hardware Effects
 LEDs D5, D4, D3 and D2 rotate from left to right at a constant rate of 499.712 ms.
 #### Summary
-This lab demonstrates the advantage of using interrupts over polling. An interrupt is generated whenever the TMR0 register reaches 0xFF and goes back to reset value. This indicates that 500 ms have passed and it is time to rotate the light. This interrupt is serviced by the ```TMR0_ISR()``` function.
+This lab demonstrates the advantage of using interrupts over polling. An interrupt is generated whenever the Timer0 (TMR0) register reaches 0xFF and goes back to reset value. This indicates that 500 ms have passed and it is time to rotate the light. This interrupt is serviced by the ```TMR0_ISR()``` function.
 
 **Note** that this is the same for Lab 7: Timer1, but this time, we are not continuously watching the TMR1IF flag.
 ###### Program Flow: Interrupt Lab
@@ -175,9 +175,9 @@ This lab demonstrates the advantage of using interrupts over polling. An interru
 
 ### <u>Lab 9: Wake-up from Sleep: Using Watchdog Timer</u>
 #### Introduction
-This lab will introduce the Sleep mode. ```SLEEP()``` function is used to put the device into a low-power standby mode.
+This lab introduces the Sleep mode. ```SLEEP()``` function is used to put the device into a low-power standby mode.
 #### Hardware Effects
-Once this lab is on ```RUNNING``` state, the WDT will start counting. While in Sleep mode, LEDs D2/D4 and LEDs D3/D5 are turned ON and OFF respectively. Pressing the switch will not move to the next lab since the PIC is in Sleep mode. After the WDT has reached its period, which is approximately four seconds for this lab, the PIC exits Sleep mode and the four LEDs, D2 through D5, are toggled.
+Once this lab is in ```RUNNING``` state, the WDT will start counting. While in Sleep mode, LEDs D2/D4 and LEDs D3/D5 are turned ON and OFF respectively. Pressing the switch will not move to the next lab since the PIC is in Sleep mode. After the WDT has reached its period, which is approximately four seconds for this lab, the PIC exits Sleep mode and the four LEDs, D2 through D5, are toggled.
 #### Summary
 The Power-Down mode is entered by executing the```SLEEP``` instruction. Upon entering Sleep mode, there are different conditions that can exist, such as:
 - WDT will be cleared but keeps running, if enabled for operation during Sleep
@@ -198,7 +198,7 @@ This lab provides code for writing and reading a single byte onto the on-board E
 #### Hardware Effects
 The top four MSBs of the ADC are written to EEPROM. These are read afterwards and displayed on the LEDs. Rotating the potentiometer changes the ADC value to be written to and read from EEPROM.
 #### Summary
-This lab has a similar appearance to Lab 4: ADC. Instead of directly moving the ADC result onto the LEDs, it performs a simple "write" and "read" on the EEPROM. As shown on figure below, the top four MSBs of the ADC result are first written to EEPROM, and retrieved later from the same address before moving onto the LEDs.
+This lab has a similar appearance to Lab 4: ADC. Instead of moving the ADC result directly onto the LEDs, it performs a simple "write" and "read" on the EEPROM. As shown on figure below, the top four MSBs of the ADC result are first written to EEPROM, and retrieved later from the same address before moving onto the LEDs.
 
 ###### Program Flow: EEPROM Lab
 ![Lab 10 Program Flow](images/Lab10-program-flow.PNG)
@@ -211,6 +211,6 @@ To progress through each Lab: Press S1, and observe the results.
 Rotation of the Potentiometer takes place during the (ADCC) Analog-to-digital Converter, Variable Speed Rotate, (PWM) Pulse width modulation and (EEPROM) Electronic erasable read only memory labs.
 
 ## Summary
-After programming the device and completing all the labs. The user has learned how to setup a GPIO to turn on an LED. Setup and use the timer module using the polling method to blink an LED. Use a concept of rotating a register through the carry bit to rotate the lighting of an LED. Setup and use the ADC module to do an analog-to-digital conversion. Setup and use the PWM module to adjust the brightness of an LED. Setup and use the timer to control the rotation of an led through an array of LEDs. Setup and use interrupts so the user may use the core of the microcontroller as efficient as possible. Wake-up from sleep: using the WDT timer. Setup and use the NVM module routines to use onboard EEPROM for non-volatile memory storage. 
+After programming the device and completing all the labs. The user has learned how to setup a GPIO to turn on an LED. Setup and use the timer module using the polling method to blink an LED. Use a concept of rotating a register through the carry bit to rotate the lighting of an LED. Setup and use the ADC module to do an analog-to-digital conversion. Setup and use the PWM module to adjust the brightness of an LED. Setup and use the timer to control the rotation of an led through an array of LEDs. Setup and use interrupts so the user may use the core of the microcontroller as efficient as possible. Wake-up from sleep: using the WDT timer. Setup and use the NVM module routines to use on-board EEPROM for non-volatile memory storage. 
 
 **Note:** For the complete step-by-step guide in making this example, [click here](http://ww1.microchip.com/downloads/en/DeviceDoc/Curiosity%20HPC%20Demo%20Code.zip) and open the ReadMe document inside the downloaded folder.
