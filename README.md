@@ -1,6 +1,6 @@
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# Curiosity HPC Labs Using PIC18F46K42
+# Curiosity High Pin Count (HPC) Labs Using PIC18F46K42
 
 This project contains ten labs that demonstrate the capabilities of the Curiosity High Pin Count (HPC) board and showcase the functionality of the PIC18F46K42 device. The idea is to create a state machine that allows navigation through each lab using the S1 button. Some labs need a potentiometer for analog input. The lab outputs are displayed using four LEDs provided by the Curiosity development board. This project is primarily created with the aim of helping beginners in basic programming of MCUs.
 
@@ -100,8 +100,7 @@ Similarly, if we want to push a '1' into the MSB of the register and have the re
 ###### Right Shift Binary Operation
 ![Lab3-right-shift-binary-operation](images/Lab3-right-shift-binary-operation.PNG)
  
-
-![](https://i.imgur.com/6TIkKQC.jpg){width=auto height=auto align=center}
+<img src= "https://i.imgur.com/6TIkKQC.jpg">
 
 ### <u>Lab 4: Analog-to-Digital Converter (ADC)</u>
 #### Introduction
@@ -114,7 +113,8 @@ The four most significant bits of the ADC result are reflected onto each of the 
 The PIC18-K42 family of devices have an on-board Analog-to-Digital Converter with Computation (ADCC) with 12 bits of resolution. The converter can be referenced to the device’s V<sub>DD</sub> or an external voltage reference. This lab references it to V<sub>DD</sub>  The result from the ADC is represented by a ratio of the voltage to the reference.
 ###### Program Flow: Analog-to-Digital Converter Lab
 <img src= "https://i.imgur.com/xOCuHXb.png">
-<br><img src= "images/adcc.png">
+
+![ADCC](images/adcc.png)
 
 ### <u>Lab 5: Variable Speed Rotate</u>
 #### Introduction
