@@ -207,6 +207,6 @@ To progress through each Lab: Press S1, and observe the results.
 Rotation of the Potentiometer takes place during the (ADCC) Analog-to-digital Converter, Variable Speed Rotate, (PWM) Pulse width modulation and (EEPROM) Electronic erasable read only memory labs.
 
 ## Summary
-After programming and pressing S1 you have observed all 10 labs demonstrated by this code example.
+After programming the device and completing all the labs. The user has learned how to setup a GPIO to turn on an LED. Setup and use the timer module using the polling method to blink an LED. Use a concept of rotating a register through the carry bit to rotate the lighting of an LED. Setup and use the ADC module to do an analog-to-digital conversion. Setup and use the PWM module to adjust the brightness of an LED. Setup and use the timer to control the rotation of an led through an array of LEDs. Setup and use interrupts so the user may use the core of the microcontroller as efficient as possible. Wake-up from sleep: using the WDT timer. Setup and use the NVM module routines to use onboard EEPROM for non-volatile memory storage. 
 
 **Note:** For the complete step-by-step guide in making this example, [click here](http://ww1.microchip.com/downloads/en/DeviceDoc/Curiosity%20HPC%20Demo%20Code.zip) and open the ReadMe document inside the downloaded folder.
