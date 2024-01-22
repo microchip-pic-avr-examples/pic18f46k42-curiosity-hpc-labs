@@ -89,12 +89,12 @@ LEDs D2, D3, D4 and D5 light up in turn every 500 ms. Once D5 is lit, D2 lights 
 #### Summary
 In C language, a Binary Left Shift (<<) and a Binary Right Shift Operators (>>) are used to move bits in the registers. The shift operations are 9-bit operations involving the 8-bit register being manipulated and the Carry bit in the STATUS register as the ninth bit. With the rotate instructions, the register contents are rotated through the Carry bit. <br />
 
-For example, for a certain register rotateReg, we want to push a '```1```' into the Least Significant Byte (LSB) of the register and have the rest of the bits shift to the left, we can use the Binary Left Shift Operator (<<). We would first have to set up the Carry bit with the value that we want to push into the register before we execute next instruction, as seen in the figure below.
+For example, for a certain register rotateReg, we want to push a '```1```' into the Least Significant Bit (LSB) of the register and have the rest of the bits shift to the left, we can use the Binary Left Shift Operator (<<). We would first have to set up the Carry bit with the value that we want to push into the register before we execute next instruction, as seen in the figure below.
 
 ###### Left Shift Binary Operation
 ![Lab3-left-shift-binary-operation](images/Lab3-left-shift-binary-operation.PNG)
 
-Similarly, if we want to push a '```1```' into the Most Significant Byte (MSB) of the register and have the rest of the bits shift to the right, we can use the Binary Right Shift Operator (>>). We would first have to set up the Carry bit with the value that we want to push into the register before we execute the next instruction, as seen in  the figure below.
+Similarly, if we want to push a '```1```' into the Most Significant Bit (MSB) of the register and have the rest of the bits shift to the right, we can use the Binary Right Shift Operator (>>). We would first have to set up the Carry bit with the value that we want to push into the register before we execute the next instruction, as seen in  the figure below.
 
 ###### Right Shift Binary Operation
 ![Lab3-right-shift-binary-operation](images/Lab3-right-shift-binary-operation.PNG)
