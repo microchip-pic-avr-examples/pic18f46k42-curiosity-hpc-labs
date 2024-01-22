@@ -204,7 +204,7 @@ This lab has a similar appearance to Lab 4: ADC. Instead of moving the ADC resul
 <br><img src= "images/nvm.png">
 
 ## Operation
-- Program Device using MPLABX project provided.
+- Program the device using the MPLABX project provided.
 - To progress through each Lab, Press S1, and observe the results. 
 - Rotation of the Potentiometer takes place during the Analog-to-digital Converter (ADC), Variable Speed Rotate, Pulse width modulation (PWM), and EEPROM labs.
 
